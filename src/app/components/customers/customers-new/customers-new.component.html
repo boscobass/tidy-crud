@@ -1,0 +1,56 @@
+<div class="modal-header">
+  <h4 class="modal-title" id="modal-basic-title">New Customer</h4>
+  <button type="button" class="close" aria-label="Close" (click)="dismiss()">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body">
+  <div class="col-md-12">
+    <form #f="ngForm" (ngSubmit)="register(f)">
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" class="form-control" [ngModel]="customer.name" name="name" [class.is-invalid]="!f.value.email && f.dirty" required>
+      </div>
+
+      <div class="form-group">
+        <label for="name">Email</label>
+        <input type="text" class="form-control" [ngModel]="customer.email" name="email" [class.is-invalid]="!checkEmail(f.value.email) && f.dirty" required>
+        <p *ngIf="!checkEmail(f.value.email) && f.dirty" class="invalid-feedback">Insert a valid email</p>
+      </div>
+
+      <div class="form-group">
+        <label for="name">Phone</label>
+        <input type="text" class="form-control" [ngModel]="customer.phone" name="phone" [class.is-invalid]="!f.value.phone && f.dirty" required>
+      </div>
+
+      <div class="form-group">
+        <label for="name">Zipcode</label>
+        <input type="text" class="form-control" [ngModel]="customer.zipcode" name="zipcode" [class.is-invalid]="!f.value.zipcode && f.dirty" required>
+      </div>
+
+      <div class="form-group">
+        <label for="name">Address</label>
+        <input type="text" class="form-control" [ngModel]="customer.address" name="address" [class.is-invalid]="!f.value.address && f.dirty" required>
+      </div>
+
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="name">City</label>
+            <input type="text" class="form-control" [ngModel]="customer.city" [class.is-invalid]="!f.value.city && f.dirty" name="city" required>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="name">State</label>
+            <input type="text" class="form-control" [ngModel]="customer.state" [class.is-invalid]="!f.value.state && f.dirty" name="state" required>
+          </div>
+        </div>
+      </div>
+
+      <button type="submit" class="btn btn-success" [disabled]="!f.valid" >Submit</button>
+
+
+    </form>
+  </div>
+</div>

@@ -1,0 +1,18 @@
+<div class="modal-header">
+  <h4 class="modal-title" id="modal-basic-title">Customer Details</h4>
+  <button type="button" class="close" aria-label="Close" (click)="dismiss()">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body">
+  <div class="col-md-12 clearfix">
+    <img src="https://i.pravatar.cc/255?u={{customer.id}}" title="{{customer.name}}" class="rounded float-left mr-2" />
+    <h3>{{customer.name}}</h3>
+    <small><cite title="Source Title"><i class="fa fa-map-marker"></i> {{customer.address}}, {{customer.city}}-{{customer.state}}</cite></small>
+    <p>
+      <i class="fa fa-envelope"></i> {{customer.email}}
+      <br> <i class="fa fa-phone"></i> {{customer.phone}}
+      <br> Created At: {{customer.created_at | date }}</p>
+  </div>
+</div>
+

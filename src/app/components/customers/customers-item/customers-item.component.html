@@ -1,0 +1,15 @@
+<div class="card mb-4 shadow-sm">
+  <img src="https://i.pravatar.cc/255?u={{customer.id}}" title="{{customer.name}}">
+  <div class="card-body">
+    <h4 class="card-text customer-name">{{customer.name}}</h4>
+    <p class="card-text">{{customer.email}}</p>
+    <div class="d-flex justify-content-between align-items-center">
+      <div class="btn-group">
+        <a [routerLink]="['/customer', 'details', customer.id]" class="btn btn-sm btn-outline-secondary">View</a>
+        <a [routerLink]="['/customer', 'update', customer.id]" class="btn btn-sm btn-outline-secondary">Edit</a>
+      </div>
+      <small class="text-muted">{{customer.created_at | date: "MM/dd/y HH:mm:ss"}}</small>
+    </div>
+  </div>
+</div>
+
